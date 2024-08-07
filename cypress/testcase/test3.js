@@ -23,8 +23,23 @@ cy.get('.ui-menu-item div').each(($e1,index,$list) => {
 
 })
 
+//assertio to check india value 
+cy.get('#autocomplete').should('have.value','India')
+
+
+// Dynainc Element Diplay and hide from screen assert 
+cy.get('#displayed-text').should('be.visible')
+cy.get('[value="Hide"]').click()
+cy.get('#displayed-text').should('not.be.visible')
+cy.get('[value="Show"]').click()
+cy.get('#displayed-text').should('be.visible')
+
+
+//radio button click
+cy.get('[value="radio1"]').check().should('be.checked') 
+
 }  )
  
  
- 
+    
 }  )
